@@ -1,0 +1,234 @@
+/* --- CSS Portfolio Hassan Swessi --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #e5e5e5;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Canvas Particles */
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Background Logos */
+.logo-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.logo-item {
+    position: absolute;
+    opacity: 0.5;
+    animation: float 20s infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Profil */
+.profile {
+    margin-bottom: 50px;
+}
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    margin: 0 auto 20px;
+    box-shadow: 0 20px 40px rgba(0, 150, 255, 0.3);
+    object-fit: cover;
+}
+
+.profile h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0 4px 15px rgba(0, 150, 255, 0.4);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Liens sociaux */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0 50px;
+}
+
+.social-links a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgba(0, 150, 255, 0.3);
+}
+
+.social-links a svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+.social-links a:hover {
+    background: rgba(0, 150, 255, 0.2);
+    transform: translateY(-3px);
+    border-color: rgba(0, 150, 255, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+}
+
+/* Sections */
+.section-button {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-button:hover {
+    background: rgba(0, 150, 255, 0.15);
+}
+
+.section-header {
+    padding: 20px 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chevron {
+    width: 22px;
+    height: 22px;
+    transition: 0.3s;
+}
+
+.section-button.expanded .chevron {
+    transform: rotate(180deg);
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+    padding: 0 30px;
+    text-align: left;
+}
+
+.section-button.expanded .section-content {
+    max-height: 1200px;
+}
+
+.section-content-inner {
+    padding-bottom: 30px;
+}
+
+/* Liens projets & documents */
+.project-link,
+.download-link {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    display: block;
+    color: #e5e5e5;
+    text-decoration: none;
+    border-left: 3px solid rgba(0, 150, 255, 0.5);
+}
+
+.project-link:hover,
+.download-link:hover {
+    background: rgba(0, 150, 255, 0.15);
+    border-left: 3px solid #0096ff;
+    transform: translateX(5px);
+}
+
+/* Expériences & compétences */
+.experience-item,
+.skill-item {
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 4px solid #0096ff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.experience-item:hover,
+.skill-item:hover {
+    background: rgba(0, 150, 255, 0.1);
+    transform: translateX(3px);
+}
+
+footer {
+    margin-top: 50px;
+    opacity: 0.7;
+}
+
+/* Icons */
+.link-icon,
+.item-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 8px;
+    vertical-align: middle;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
