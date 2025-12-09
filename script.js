@@ -161,3 +161,17 @@ function initLogoBackground() {
         container.appendChild(logo);
     }
 }
+
+// Toggle competence PDF preview
+function toggleCompetencePreview() {
+    const container = document.getElementById('competencePreviewContainer');
+    if (!container) return;
+    if (container.style.display === 'none' || container.style.display === '') {
+        container.style.display = 'block';
+        // lazy load iframe if src is empty (keeps initial load smaller)
+        const iframe = document.getElementById('competencePreview');
+        if (iframe && !iframe.src) iframe.src = 'document/competence.pdf';
+    } else {
+        container.style.display = 'none';
+    }
+}
